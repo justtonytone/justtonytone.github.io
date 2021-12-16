@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+            window.addEventListener('message', event => {
+                if (event.origin !== 'https://justtonytone.github.io') {
+                    return;
+                }
+                if (event.data === 'close') {
+                    const tolunaIframe = document.getElementById('toluna');
+                    if (tolunaIframe) {
+                        tolunaIframe.parentElement?.removeChild(tolunaIframe);
+                    }
+                }
+            })
+        </script>
+    </head>
+
+    <body>
+        <iframe
+            id="toluna"
+            src="https://project.tolunastart.com/s/n3M2T?theme=orange"
+            style="position: fixed; padding: 35px 1px 10px; border: 1px solid rgb(224, 228, 233); border-radius: 2px; margin-bottom: 15px; background-color: white; z-index: 99999; box-shadow: rgb(204, 204, 204) 0px 0px 8px; overflow: hidden; right: 30px; bottom: 0px; height: 550px; width: 350px; display: block;"
+        />
+    </body>
+</html>
